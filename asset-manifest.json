@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/Mahamood-Sameer/Drive/static/css/main.c969c18b.chunk.css",
+    "main.js": "/Mahamood-Sameer/Drive/static/js/main.534ba27b.chunk.js",
+    "main.js.map": "/Mahamood-Sameer/Drive/static/js/main.534ba27b.chunk.js.map",
+    "runtime-main.js": "/Mahamood-Sameer/Drive/static/js/runtime-main.80f23211.js",
+    "runtime-main.js.map": "/Mahamood-Sameer/Drive/static/js/runtime-main.80f23211.js.map",
+    "static/js/2.8dd3f49e.chunk.js": "/Mahamood-Sameer/Drive/static/js/2.8dd3f49e.chunk.js",
+    "static/js/2.8dd3f49e.chunk.js.map": "/Mahamood-Sameer/Drive/static/js/2.8dd3f49e.chunk.js.map",
+    "static/js/3.6526ce95.chunk.js": "/Mahamood-Sameer/Drive/static/js/3.6526ce95.chunk.js",
+    "static/js/3.6526ce95.chunk.js.map": "/Mahamood-Sameer/Drive/static/js/3.6526ce95.chunk.js.map",
+    "index.html": "/Mahamood-Sameer/Drive/index.html",
+    "static/css/main.c969c18b.chunk.css.map": "/Mahamood-Sameer/Drive/static/css/main.c969c18b.chunk.css.map",
+    "static/js/2.8dd3f49e.chunk.js.LICENSE.txt": "/Mahamood-Sameer/Drive/static/js/2.8dd3f49e.chunk.js.LICENSE.txt",
+    "static/media/image1.0c914924.jpg": "/Mahamood-Sameer/Drive/static/media/image1.0c914924.jpg",
+    "static/media/image2.83a5e022.jpg": "/Mahamood-Sameer/Drive/static/media/image2.83a5e022.jpg",
+    "static/media/image3.d24cb116.png": "/Mahamood-Sameer/Drive/static/media/image3.d24cb116.png",
+    "static/media/image4.93cff0a0.jpg": "/Mahamood-Sameer/Drive/static/media/image4.93cff0a0.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.80f23211.js",
+    "static/js/2.8dd3f49e.chunk.js",
+    "static/css/main.c969c18b.chunk.css",
+    "static/js/main.534ba27b.chunk.js"
+  ]
+}
