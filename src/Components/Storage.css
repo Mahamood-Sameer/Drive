@@ -1,0 +1,21 @@
+.storage{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid lightgray;
+    cursor: pointer;
+}
+.storage:hover{
+    background-color: lightgray;
+}
+.storage__title{
+    display: flex;
+    align-items: center;
+}
+.storage__title p{
+    margin-left: 10px;
+}

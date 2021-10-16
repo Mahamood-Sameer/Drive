@@ -1,0 +1,72 @@
+.sidenav{
+    flex: 0.2;
+    height: 100vh;
+    overflow-y: auto;
+}
+.sidenav__addbtn{
+    text-transform: inherit !important;
+    padding: 5px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    border-radius: 20px !important;
+    background: white !important;
+    color: black !important;
+    box-shadow: 1px 3px 15px lightgrey;
+    font-size: 15px !important;
+    margin-top: 15px !important;
+    margin-left: 20px !important;
+}
+.sidenav__addicon{
+    font-size: 35px !important;
+    margin-right: 15px;
+}
+.sidenav__options{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 10px;
+}
+.options{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-size: 14px !important;
+    font-weight: 700;
+    border-radius: 0 30px 30px 0;
+    color: black  !important;
+    text-decoration: none !important;
+}
+.options:hover{
+    background: rgb(219, 218, 218);
+    cursor: pointer;
+}
+.options p{
+    margin-left: 20px !important;
+}
+
+.options__icons{
+    margin-left: 30px !important;
+}
+.sidenav__footer{
+    padding-bottom: 100px;
+}
+.sidenav__storageicon{
+    margin-top: 20px;
+}
+
+.sidenav__slider{
+    width: 150px !important;
+    margin-left: 30px;
+}
+.sidenav__footer p{
+    margin-left: 30px;
+    font-size: 14px;
+}
+.sidenav__footer Button{
+    margin-top: 20px;
+    margin-left: 30px  !important;
+    border: 1px solid lightgray;
+    text-transform: inherit;
+    font-weight: 700  !important;
+}

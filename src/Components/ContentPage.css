@@ -1,0 +1,92 @@
+.contentpage{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+}
+.contentpage__sideheading{
+    margin-top: 20px;
+}
+.contentpage__header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid lightgray;
+}
+.contentpage__header p{
+    font-size: 20px;
+    cursor: pointer;
+}
+.contentpage__header__icons{
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.contentpage__header__icons .icons{
+    margin-left: 20px;
+    cursor: pointer;
+}
+.contentpage__cards{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    overflow-y: scroll;
+    height: 70vh;
+    padding-bottom: 100px;
+}
+::-webkit-scrollbar{
+    width: 7px;
+}
+::-webkit-scrollbar-track {
+    background: white;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgb(167, 166, 166);
+}
+
+.doccards{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid lightgray;
+    background-color: rgb(236, 231, 231);
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+.doccards__images{
+    width: 250px;
+    height: 150px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.doccards__images img{
+    width: 250px;
+    object-fit: contain;
+}
+.doccards__footer{
+    width: 250px;
+    padding: 10px;
+    background-color: white;
+    border-top: 1px solid lightgray;
+    border-radius: 0 0 10px 10px;
+}
+
+.doccard__footer__title{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.doccard__footer__title p{
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+.doccards__footer strong{
+    color: grey;
+    margin-top: 10px;
+    font-size: 14px !important;
+}
