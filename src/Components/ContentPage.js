@@ -16,9 +16,7 @@ import ImageOutlined from '@mui/icons-material/ImageOutlined'
 
 function ContentPage() {
     let section = useParams();
-    console.log(section)
     return (
-
         section.section === 'Storage' ?
             <div className="contentpage">
                 <ContentPageHeader title={section.section}/>

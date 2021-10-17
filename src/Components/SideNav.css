@@ -40,6 +40,10 @@
 .options:hover{
     background: rgb(219, 218, 218);
     cursor: pointer;
+    color: blue !important;
+}
+.options:link:active{
+    background: rgb(219, 218, 218);
 }
 .options p{
     margin-left: 20px !important;
