@@ -16,9 +16,9 @@ function App() {
           <div className="app_body">
             <SideNav />
             <Route path="/Drive">
-              <Redirect to="/drive/My Drive"/>
+              <Redirect to="/Drive/My Drive"/>
             </Route>
-            <Route path='/drive/:section'>
+            <Route path='/Drive/:section'>
               <ContentPage />
             </Route>
           </div>
