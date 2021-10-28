@@ -30,20 +30,20 @@
 .contentpage__cards{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
     margin-top: 20px;
-    overflow-y: scroll;
-    height: 70vh;
-    padding-bottom: 100px;
+    flex-grow: 1;
 }
 ::-webkit-scrollbar{
     width: 7px;
 }
 ::-webkit-scrollbar-track {
     background: white;
+
 }
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background: rgb(167, 166, 166);
+    background: rgb(166, 166, 167);
 }
 
 .doccards{
@@ -56,16 +56,12 @@
     margin-right: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
+    height: 230px;
 }
 .doccards__images{
-    width: 250px;
-    height: 150px;
-    overflow-y: hidden;
-    overflow-x: hidden;
-}
-.doccards__images img{
-    width: 250px;
-    object-fit: contain;
+    font-size: 100px !important;
+    padding-bottom: 30px !important;
+    padding-top: 30px !important;
 }
 .doccards__footer{
     width: 250px;
@@ -73,6 +69,7 @@
     background-color: white;
     border-top: 1px solid lightgray;
     border-radius: 0 0 10px 10px;
+    flex-grow: 1;
 }
 
 .doccard__footer__title{

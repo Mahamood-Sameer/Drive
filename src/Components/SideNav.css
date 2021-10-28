@@ -1,6 +1,5 @@
 .sidenav{
     flex: 0.2;
-    height: 100vh;
     overflow-y: auto;
 }
 .sidenav__addbtn{
@@ -18,7 +17,7 @@
 }
 .sidenav__addicon{
     font-size: 35px !important;
-    margin-right: 15px;
+    margin-right: 10px;
 }
 .sidenav__options{
     display: flex;
@@ -38,6 +37,11 @@
     text-decoration: none !important;
 }
 .options:hover{
+    background: rgb(219, 218, 218);
+    cursor: pointer;
+    color: blue !important;
+}
+.options_blue{
     background: rgb(219, 218, 218);
     cursor: pointer;
     color: blue !important;
@@ -73,4 +77,17 @@
     border: 1px solid lightgray;
     text-transform: inherit;
     font-weight: 700  !important;
+}
+
+/* Dialouge box */
+input::-webkit-file-upload-button{
+    margin-top: 50px;
+    background-color: blue;
+    color: white;
+    font-size: 14px;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

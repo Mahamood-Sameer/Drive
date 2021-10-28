@@ -6,6 +6,7 @@
     position: sticky;
     top: 0;
     background: white;
+    z-index: 100;
 }
 .header__logo__box{
     display: flex;
@@ -47,4 +48,9 @@
 .header__icons .icons{
     margin-right: 15px !important;
     cursor: pointer;
+}
+.btn_logout{
+    text-transform: inherit !important;
+    color: black !important;
+    border: 1px solid lightgray !important;
 }

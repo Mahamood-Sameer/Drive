@@ -7,6 +7,8 @@ import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import AppsIcon from '@mui/icons-material/Apps';
 import { Avatar } from '@mui/material';
+import LogoutIcon from '@mui/icons-material/Logout';
+import { Button } from '@mui/material';
 
 function Header() {
     return (
@@ -25,6 +27,7 @@ function Header() {
                 <SettingsOutlinedIcon className="icons"/>
                 <AppsIcon className="icons"/>
                 <Avatar className="icons"/>
+                <Button className="icons btn_logout"><LogoutIcon /> Logout</Button>
             </div>
         </div>
     )
