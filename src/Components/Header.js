@@ -9,7 +9,7 @@ import AppsIcon from '@mui/icons-material/Apps';
 import { Avatar } from '@mui/material';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { Button } from '@mui/material';
-import { auth } from '../Firebase';
+import { auth } from '../fbase';
 
 function Header({User}) {
 

@@ -2,7 +2,7 @@ import React from "react";
 import "./Google.css";
 import logo from "./Logo.png";
 import { Button } from "@mui/material";
-import { auth , provider} from "../Firebase";
+import { auth , provider} from "../fbase";
 
 function Google() {
 

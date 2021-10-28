@@ -3,7 +3,7 @@ import Header from "./Components/Header";
 import SideNav from "./Components/SideNav";
 import ContentPage from "./Components/ContentPage";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { auth } from "./Firebase";
+import { auth } from "./fbase";
 import { useEffect, useState } from "react";
 import Google from "./Components/Google";
 

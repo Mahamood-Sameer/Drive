@@ -11,8 +11,9 @@
 # production
 /build
 
-Firebase.js
-Config.js
+
+fbase.js
+conf.js
 
 # misc
 .DS_Store
