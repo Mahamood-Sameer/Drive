@@ -81,7 +81,7 @@
 
 /* Dialouge box */
 input::-webkit-file-upload-button{
-    margin-top: 50px;
+    margin-top: 30px;
     background-color: blue;
     color: white;
     font-size: 14px;

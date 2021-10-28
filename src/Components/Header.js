@@ -9,8 +9,16 @@ import AppsIcon from '@mui/icons-material/Apps';
 import { Avatar } from '@mui/material';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { Button } from '@mui/material';
+import { auth } from '../Firebase';
 
-function Header() {
+function Header({User}) {
+
+    const Logout=()=>{
+        auth.signOut().then(()=>{
+            window.location.reload()
+        })
+    }   
+
     return (
         <div className="header">
             <div className="header__logo__box">
@@ -26,8 +34,8 @@ function Header() {
                 <HelpOutlineIcon className="icons"/>
                 <SettingsOutlinedIcon className="icons"/>
                 <AppsIcon className="icons"/>
-                <Avatar className="icons"/>
-                <Button className="icons btn_logout"><LogoutIcon /> Logout</Button>
+                <Avatar src={User.photoURL} className="icons"/>
+                <Button className="icons btn_logout" onClick={()=>{Logout()}}><LogoutIcon /> Logout</Button>
             </div>
         </div>
     )

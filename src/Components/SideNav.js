@@ -61,7 +61,6 @@ function SideNav() {
       <Dialog open={open} onClose={handleClose}>
         <form>
           <DialogTitle>Upload</DialogTitle>
-          <center>
             <DialogContent>
               <DialogContentText>
                 Click on the upload button , choose the file and click on submit
@@ -81,7 +80,6 @@ function SideNav() {
               <Button type="submit">Upload</Button>
               <Button onClick={handleClose}>Cancel</Button>
             </DialogActions>
-          </center>
         </form>
       </Dialog>
     </div>
