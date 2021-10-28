@@ -11,22 +11,61 @@ import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
 import CloudOutlinedIcon from "@mui/icons-material/CloudOutlined";
 import { Slider } from "@mui/material";
-import TextField from "@mui/material/TextField";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
+import { storage } from "../fbase";
+import { db } from "../fbase";
+import firebase from "@firebase/app-compat";
 
-function SideNav() {
+function SideNav({ User }) {
   // Dialouge box
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [file, setFile] = useState();
+  const [progress, setProgress] = useState(0);
 
   const handleClickOpen = () => {
     setOpen(true);
   };
 
   const handleClose = () => {
+    setOpen(false);
+  };
+
+  // Uploading a File
+
+  const Upload = (e) => {
+    e.preventDefault();
+    console.log(file);
+    if (file) {
+      const fileref = storage
+        .ref(`files/${User?.email}_${file?.name}`)
+        .put(file);
+      fileref.on(
+        "state_changed",
+        (snapshot) => {
+          // Progress....
+          const progress_bar = Math.round(
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+          );
+          setProgress(progress_bar);
+        },
+        (error) => {
+          alert(error.message);
+        },
+        () => {
+          storage.ref("files").child(`${User?.email}_${file.name}`).getDownloadURL().then(url => {
+              db.collection('Persons').doc(User?.uid).collection("files").add({
+                  timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                  fileURL: url,
+                  imagename: `${file.name}`
+              })
+          })
+      }
+      );
+    }
     setOpen(false);
   };
 
@@ -59,27 +98,39 @@ function SideNav() {
 
       {/* ---------- Dialoude box ---------- */}
       <Dialog open={open} onClose={handleClose}>
-        <form>
+        <form
+          onSubmit={(e) => {
+            Upload(e);
+          }}
+        >
           <DialogTitle>Upload</DialogTitle>
-            <DialogContent>
-              <DialogContentText>
-                Click on the upload button , choose the file and click on submit
-                button
-              </DialogContentText>
-              <input
-                autoFocus
-                margin="dense"
-                id="file"
-                type="file"
-                fullWidth
-                variant="standard"
-                required
-              />
-            </DialogContent>
-            <DialogActions>
-              <Button type="submit">Upload</Button>
-              <Button onClick={handleClose}>Cancel</Button>
-            </DialogActions>
+          <DialogContent>
+            <DialogContentText>
+              Click on the upload button , choose the file and click on submit
+              button...
+              <br></br>
+              <br></br>
+              <strong>It may take some time to be uploaded</strong>
+            </DialogContentText>
+            <input
+              autoFocus
+              margin="dense"
+              id="file"
+              type="file"
+              fullWidth
+              variant="standard"
+              required
+              onChange={(e) => {
+                if (e.target.files[0]) {
+                  setFile(e.target.files[0]);
+                }
+              }}
+            />
+          </DialogContent>
+          <DialogActions>
+            <Button type="submit">Upload</Button>
+            <Button onClick={handleClose}>Cancel</Button>
+          </DialogActions>
         </form>
       </Dialog>
     </div>

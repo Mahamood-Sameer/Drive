@@ -13,13 +13,12 @@ function App() {
   // Checking for user
   useEffect(() => {
     auth.onAuthStateChanged((data) => {
-      if(data){
+      if (data) {
         setUser(data);
       }
       console.log(user);
     });
   }, [user]);
-
 
   return (
     <div className="app">
@@ -27,12 +26,12 @@ function App() {
         <Google />
       ) : (
         <BrowserRouter>
-          <Header User={user}/>
+          <Header User={user} />
           <Switch>
             <div className="app_body">
-              <SideNav />
+              <SideNav User={user}/>
               <Route path="/Drive">
-                <ContentPage />
+                <ContentPage User={user}/>
               </Route>
             </div>
           </Switch>

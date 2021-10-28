@@ -1,89 +1,104 @@
-.contentpage{
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding-left: 30px;
+.contentpage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
 }
-.contentpage__sideheading{
-    margin-top: 20px;
+.contentpage__sideheading {
+  margin-top: 20px;
 }
-.contentpage__header{
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    border-bottom: 1px solid lightgray;
+.contentpage__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid lightgray;
 }
-.contentpage__header p{
-    font-size: 20px;
-    cursor: pointer;
+.contentpage__header p {
+  font-size: 20px;
+  cursor: pointer;
 }
-.contentpage__header__icons{
-    display: flex;
-    align-items: center;
-    padding-left: 20px;
-    padding-right: 20px;
+.contentpage__header__icons {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
 }
-.contentpage__header__icons .icons{
-    margin-left: 20px;
-    cursor: pointer;
+.contentpage__header__icons .icons {
+  margin-left: 20px;
+  cursor: pointer;
 }
-.contentpage__cards{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 20px;
-    flex-grow: 1;
+.contentpage__cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  flex-grow: 1;
 }
-::-webkit-scrollbar{
-    width: 7px;
+::-webkit-scrollbar {
+  width: 7px;
 }
 ::-webkit-scrollbar-track {
-    background: white;
-
+  background: white;
 }
 ::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background: rgb(166, 166, 167);
+  border-radius: 10px;
+  background: rgb(166, 166, 167);
 }
 
-.doccards{
-    padding-top: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid lightgray;
-    background-color: rgb(236, 231, 231);
-    margin-right: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    height: 230px;
+.doccards {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid lightgray;
+  background-color: rgb(236, 231, 231);
+  margin-right: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  height: 230px;
 }
-.doccards__images{
-    font-size: 100px !important;
-    padding-bottom: 30px !important;
-    padding-top: 30px !important;
+.doccards__images {
+  font-size: 100px !important;
+  padding-bottom: 30px !important;
+  padding-top: 30px !important;
 }
-.doccards__footer{
-    width: 250px;
-    padding: 10px;
-    background-color: white;
-    border-top: 1px solid lightgray;
-    border-radius: 0 0 10px 10px;
-    flex-grow: 1;
+.doccards__footer {
+  width: 250px;
+  padding: 10px;
+  background-color: white;
+  border-top: 1px solid lightgray;
+  border-radius: 0 0 10px 10px;
+  transition-property: all;
+  transition-duration: 0.4s;
+  flex-grow: 1;
+  text-decoration: none;
+  color: black;
 }
 
-.doccard__footer__title{
-    display: flex;
-    align-items: center;
+.doccard__footer__title {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.doccard__footer__title p {
+  margin-left: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.doccards__footer strong {
+  color: grey;
+  margin-top: 10px;
+  font-size: 14px !important;
+}
+.doccards__footer:hover{
+    background-color: lightgray;
+    color: blue !important;
     cursor: pointer;
 }
-.doccard__footer__title p{
-    margin-left: 10px;
-    font-size: 14px;
-    font-weight: 600;
-}
-.doccards__footer strong{
+
+
+
+.nofilesUploaded{
+    margin: 0 auto;
+    margin-top: 150px;
     color: grey;
-    margin-top: 10px;
-    font-size: 14px !important;
 }

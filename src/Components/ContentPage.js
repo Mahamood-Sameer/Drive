@@ -1,29 +1,44 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./ContentPage.css";
 import ContentPageHeader from "./ContentPageHeader";
 import DocCards from "./DocCards";
 import ImageOutlinedIcon from "@mui/icons-material/ImageOutlined";
-import { useParams } from "react-router";
-import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
+import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
+import { db } from "../fbase";
 
-function ContentPage() {
+function ContentPage({ User }) {
+  const [files, setFiles] = useState();
+
+  // Collecting files from database
+  useEffect(() => {
+    db.collection("Persons")
+      .doc(User?.uid)
+      .collection("files")
+      .onSnapshot((snapShot) => {
+        setFiles(snapShot.docs.map((doc) => doc.data()));
+      });
+  }, []);
+
+  console.log(files);
+
   return (
     <div className="contentpage">
       <ContentPageHeader title="My Drive" />
       <strong className="contentpage__sideheading">Suggested</strong>
       <div className="contentpage__cards">
-        <DocCards Image={InsertDriveFileIcon} title="Nature.jpg" Icon={ImageOutlinedIcon} />
-        <DocCards Image={InsertDriveFileIcon} title="Nature.jpg" Icon={ImageOutlinedIcon} />
-        <DocCards Image={InsertDriveFileIcon} title="Nature.jpg" Icon={ImageOutlinedIcon} />
-        <DocCards Image={InsertDriveFileIcon} title="Nature.jpg" Icon={ImageOutlinedIcon} />
-        <DocCards Image={InsertDriveFileIcon} title="Nature.jpg" Icon={ImageOutlinedIcon} />
-        <DocCards Image={InsertDriveFileIcon} title="Nature.jpg" Icon={ImageOutlinedIcon} />
-        <DocCards Image={InsertDriveFileIcon} title="Nature.jpg" Icon={ImageOutlinedIcon} />
-        <DocCards Image={InsertDriveFileIcon} title="Nature.jpg" Icon={ImageOutlinedIcon} />
-        <DocCards Image={InsertDriveFileIcon} title="Nature.jpg" Icon={ImageOutlinedIcon} />
-        <DocCards Image={InsertDriveFileIcon} title="Nature.jpg" Icon={ImageOutlinedIcon} />
-        <DocCards Image={InsertDriveFileIcon} title="Nature.jpg" Icon={ImageOutlinedIcon} />
-        <DocCards Image={InsertDriveFileIcon} title="Nature.jpg" Icon={ImageOutlinedIcon} />
+        {files?.length !== 0 ? (
+          files?.map((file)=>(
+            <DocCards
+            Image={InsertDriveFileIcon}
+            title={file.imagename}
+            Icon={InsertDriveFileIcon}
+            time={new Date(file?.timestamp?.toDate()).toUTCString()}
+            URL = {file?.fileURL}
+          />
+          ))
+        ) : (
+          <h2 className="nofilesUploaded">No files uploaded</h2>
+        )}
       </div>
     </div>
   );

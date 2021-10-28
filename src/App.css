@@ -1,8 +1,8 @@
-.app{
+.app {
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
 }
-.app_body{
+.app_body {
   flex-grow: 1;
   display: flex;
 }
