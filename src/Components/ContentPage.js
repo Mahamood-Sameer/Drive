@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./ContentPage.css";
 import ContentPageHeader from "./ContentPageHeader";
 import DocCards from "./DocCards";
-import ImageOutlinedIcon from "@mui/icons-material/ImageOutlined";
 import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
 import { db } from "../fbase";
 
@@ -18,8 +17,6 @@ function ContentPage({ User }) {
         setFiles(snapShot.docs.map((doc) => doc.data()));
       });
   }, []);
-
-  console.log(files);
 
   return (
     <div className="contentpage">

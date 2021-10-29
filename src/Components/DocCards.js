@@ -4,7 +4,7 @@ function DocCards({ Image, title, Icon ,time ,URL }) {
   return (
     <div className="doccards">
       <Image className="doccards__images" />
-      <a href={URL} target="_blank" className="doccards__footer">
+      <a href={URL} target="_blank" className="doccards__footer"  rel="noreferrer">
         <div className="doccard__footer__title">
           <Icon />
           <p>{title}</p>

@@ -19,12 +19,15 @@ import DialogTitle from "@mui/material/DialogTitle";
 import { storage } from "../fbase";
 import { db } from "../fbase";
 import firebase from "@firebase/app-compat";
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
 
 function SideNav({ User }) {
   // Dialouge box
   const [open, setOpen] = useState(false);
   const [file, setFile] = useState();
   const [progress, setProgress] = useState(0);
+  const [backdrop,setBackdrop] = useState(false)
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -38,7 +41,6 @@ function SideNav({ User }) {
 
   const Upload = (e) => {
     e.preventDefault();
-    console.log(file);
     if (file) {
       const fileref = storage
         .ref(`files/${User?.email}_${file?.name}`)
@@ -51,19 +53,31 @@ function SideNav({ User }) {
             (snapshot.bytesTransferred / snapshot.totalBytes) * 100
           );
           setProgress(progress_bar);
+          if (progress_bar === 0) {
+            setBackdrop(true)
+          } else {
+            setBackdrop(false)
+          }
         },
         (error) => {
           alert(error.message);
         },
         () => {
-          storage.ref("files").child(`${User?.email}_${file.name}`).getDownloadURL().then(url => {
-              db.collection('Persons').doc(User?.uid).collection("files").add({
+          storage
+            .ref("files")
+            .child(`${User?.email}_${file.name}`)
+            .getDownloadURL()
+            .then((url) => {
+              db.collection("Persons")
+                .doc(User?.uid)
+                .collection("files")
+                .add({
                   timestamp: firebase.firestore.FieldValue.serverTimestamp(),
                   fileURL: url,
-                  imagename: `${file.name}`
-              })
-          })
-      }
+                  imagename: `${file.name}`,
+                });
+            });
+        }
       );
     }
     setOpen(false);
@@ -133,6 +147,18 @@ function SideNav({ User }) {
           </DialogActions>
         </form>
       </Dialog>
+
+      {/* -------------Backdrop------------- */}
+
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={backdrop}
+        onClick={()=>{
+          setBackdrop(false)
+        }}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
     </div>
   );
 }
