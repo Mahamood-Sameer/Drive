@@ -19,15 +19,15 @@ import DialogTitle from "@mui/material/DialogTitle";
 import { storage } from "../fbase";
 import { db } from "../fbase";
 import firebase from "@firebase/app-compat";
-import Backdrop from '@mui/material/Backdrop';
-import CircularProgress from '@mui/material/CircularProgress';
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function SideNav({ User }) {
   // Dialouge box
   const [open, setOpen] = useState(false);
   const [file, setFile] = useState();
   const [progress, setProgress] = useState(0);
-  const [backdrop,setBackdrop] = useState(false)
+  const [backdrop, setBackdrop] = useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -54,9 +54,9 @@ function SideNav({ User }) {
           );
           setProgress(progress_bar);
           if (progress_bar === 0) {
-            setBackdrop(true)
+            setBackdrop(true);
           } else {
-            setBackdrop(false)
+            setBackdrop(false);
           }
         },
         (error) => {
@@ -120,8 +120,7 @@ function SideNav({ User }) {
           <DialogTitle>Upload</DialogTitle>
           <DialogContent>
             <DialogContentText>
-              Click on the upload button , choose the file and click on submit
-              button...
+              Choose the file and click on upload button...
               <br></br>
               <br></br>
               <strong>It may take some time to be uploaded</strong>
@@ -153,8 +152,8 @@ function SideNav({ User }) {
       <Backdrop
         sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
         open={backdrop}
-        onClick={()=>{
-          setBackdrop(false)
+        onClick={() => {
+          setBackdrop(false);
         }}
       >
         <CircularProgress color="inherit" />
