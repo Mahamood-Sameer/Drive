@@ -97,7 +97,9 @@ function SideNav({ User }) {
         <Options Icon={DeleteOutlineOutlinedIcon} title="Bin" />
       </div>
       <div className="sidenav__storageicon"></div>
+      <div className="storage">
       <Options Icon={CloudOutlinedIcon} title="Storage" />
+      </div>
       <div className="sidenav__footer">
         <Slider
           className="sidenav__slider"

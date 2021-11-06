@@ -1,3 +1,7 @@
+.header__menuicon_responsive{
+  margin-right: 10px;
+  cursor: pointer;
+}
 .header {
   display: flex;
   align-items: center;
@@ -54,4 +58,42 @@
   text-transform: inherit !important;
   color: black !important;
   border: 1px solid lightgray !important;
+}
+.header__menuicon_responsive{
+  display: none !important;
+}
+.responsive__menu{
+  display: flex;
+  align-items: center;
+  font-size: 15px  !important;
+}
+.responsive__menu > .css-i4bv87-MuiSvgIcon-root{
+  margin-right: 10px !important;
+}
+@media (max-width:1360px) {
+  .header__menuicon_responsive{
+    display: inline !important;
+  }
+}
+@media (max-width:900px) {
+  .header{
+    justify-content: space-between;
+  }
+  .header__search__box,.icons_none{
+    display: none !important;
+  }
+  .header__logo__box > img{
+    width: 40px;
+    object-fit: contain;
+  }
+  .btn_logout{
+    font-size: 12px !important;
+    padding: 5px !important;
+  }
+  .header__logo__box p {
+    font-size: 18px;
+  }
+  .header__icons .icons {
+    margin-right: 10px !important;
+  }
 }

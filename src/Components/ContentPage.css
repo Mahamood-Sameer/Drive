@@ -89,16 +89,58 @@
   margin-top: 10px;
   font-size: 14px !important;
 }
-.doccards__footer:hover{
-    background-color: lightgray;
-    color: blue !important;
-    cursor: pointer;
+.doccards__footer:hover {
+  background-color: lightgray;
+  color: blue !important;
+  cursor: pointer;
 }
 
+.nofilesUploaded {
+  margin: 0 auto;
+  margin-top: 150px;
+  color: grey;
+}
 
-
-.nofilesUploaded{
-    margin: 0 auto;
-    margin-top: 150px;
-    color: grey;
+@media (max-width: 1360px) {
+  .contentpage{
+    padding-left: 10px;
+  }
+  .doccards {
+    height: 190px;
+  }
+  .doccards__footer {
+    width: 190px;
+  }
+  .doccards__images {
+    font-size: 80px !important;
+    padding-bottom: 20px !important;
+    padding-top: 20px !important;
+  }
+  .doccards__footer strong {
+    font-size: 12px !important;
+  }
+}
+@media (max-width:900px){
+  .doccards {
+    height: 150px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+  .doccards__footer {
+    width: 130px;
+  }
+  .doccards__images {
+    font-size: 60px !important;
+    padding-bottom: 10px !important;
+    padding-top: 10px !important;
+  }
+  .doccards__footer strong {
+    font-size: 9px !important;
+  }
+  .doccard__footer__title p{
+    font-size: 12px;
+  }
+  .contentpage__cards{
+    justify-content: space-around;
+  }
 }

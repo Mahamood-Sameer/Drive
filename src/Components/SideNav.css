@@ -91,3 +91,16 @@ input::-webkit-file-upload-button {
   border-radius: 10px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+@media (max-width:1360px) {
+  .sidenav__options,.sidenav__footer,.sidenav__storageicon,.storage{
+    display: none;
+  }
+  .sidenav__addbtn{
+    margin-bottom: 15px !important;
+    font-size: 13px !important;
+  }
+  .sidenav__addicon{
+    font-size: 25px  !important;
+  }
+}

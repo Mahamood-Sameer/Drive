@@ -45,3 +45,19 @@
   border-radius: 5px;
   margin-top: 30px;
 }
+
+@media (max-width:1000px) {
+  .google_auth{
+    width: 70vw;
+  }
+  .logo__section > img{
+    width: 50px;
+    object-fit: contain;
+  }
+  .google__body > p {
+    font-size: 17px;
+  }
+  .google__body span{
+    font-size: 13px;
+  }
+}

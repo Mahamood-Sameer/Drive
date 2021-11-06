@@ -6,3 +6,8 @@
   flex-grow: 1;
   display: flex;
 }
+@media (max-width:1360px) {
+ .app_body{
+   flex-direction: column;
+ } 
+}
