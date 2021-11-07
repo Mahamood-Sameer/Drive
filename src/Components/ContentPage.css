@@ -121,18 +121,22 @@
   }
 }
 @media (max-width:900px){
+  .contentpage__cards{
+    flex-direction: column;
+  }
   .doccards {
-    height: 150px;
-    margin-right: 5px;
+    height: 190px;
+    width: 90%;
+    margin: 0 auto;
     margin-bottom: 5px;
   }
   .doccards__footer {
-    width: 130px;
+    width: 93.2%;
   }
   .doccards__images {
-    font-size: 60px !important;
-    padding-bottom: 10px !important;
-    padding-top: 10px !important;
+    font-size: 80px !important;
+    padding-bottom: 20px !important;
+    padding-top: 20px !important;
   }
   .doccards__footer strong {
     font-size: 9px !important;
